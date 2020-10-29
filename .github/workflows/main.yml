@@ -30,7 +30,7 @@ jobs:
           codecov
   deploy:
     needs: build
-    if: jobs.build.result == success
+    if: needs.build.result == 'success'
     runs-on: ubuntu-16.04
     steps:
       - name: Deploy to PyPi
